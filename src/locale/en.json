@@ -1,0 +1,108 @@
+{
+  "title": "Your Bookmark Validator",
+  "description": "Say goodbye to broken links. Upload your bookmark file, and we will automatically check the validity of all links and generate a clear report.",
+  "featuresTitle": "Why Choose Us?",
+  "featuresDescription": "We provide a powerful, easy-to-use, and secure service to help you effortlessly manage your growing bookmark collection.",
+  "features": [
+    {
+      "icon": "Link",
+      "title": "Comprehensive Link Check",
+      "description": "Automatically detect broken, timed-out, or redirected links to ensure your bookmark library is always valid."
+    },
+    {
+      "icon": "FileCheck2",
+      "title": "Batch Upload Processing",
+      "description": "Supports standard HTML bookmark files exported from browsers, processing thousands of links at once."
+    },
+    {
+      "icon": "ShieldCheck",
+      "title": "Security & Privacy",
+      "description": "All processing is done securely on your device and our servers. We never store your bookmark data."
+    },
+    {
+      "icon": "Download",
+      "title": "Multiple Export Options",
+      "description": "Export scan results as XLSX or TXT files for easy backup, cleaning, or migration."
+    },
+    {
+      "icon": "Zap",
+      "title": "High-Speed Concurrent Checking",
+      "description": "Uses optimized concurrent checking technology to complete detection tasks in the shortest possible time."
+    },
+    {
+      "icon": "GaugeCircle",
+      "title": "Detailed Status Reports",
+      "description": "Provides detailed reports with HTTP status codes and error messages, making problematic links clear at a glance."
+    }
+  ],
+  "howItWorksTitle": "Refresh Your Bookmarks in Three Simple Steps",
+  "steps": [
+    {
+      "title": "Upload File",
+      "description": "Export your bookmarks from your browser as an HTML file and upload it."
+    },
+    {
+      "title": "Automatic Scan",
+      "description": "Our system will quickly check the validity of all your links."
+    },
+    {
+      "title": "Download Report",
+      "description": "View the detailed results and export a clean list of your bookmarks."
+    }
+  ],
+  "headerTitle": "Bookmark Checker",
+  "footer": {
+    "copyright": "",
+    "quickLinks": {
+      "title": "Quick Links"
+    },
+    "socials": {
+      "title": "Socials",
+      "links": [
+        {
+          "name": "Lab",
+          "href": "https://itea.dev/"
+        },
+        {
+          "name": "Drifter",
+          "href": "https://drifter.itea.dev/"
+        },
+        {
+          "name": "Sponsor",
+          "href": "https://github.com/sponsors/Libroka"
+        }
+      ]
+    }
+  },
+  "uploader": {
+    "loading": "Checking links...",
+    "patience": "The more bookmarks, the longer it takes. Please be patient.",
+    "uploadTitle": "Upload Your Bookmarks",
+    "dragAndDrop": "Drag & drop your bookmark file here, or click to select",
+    "fileHint": "(Usually exported from your browser as an HTML file)",
+    "invalidFileType": "Invalid File Type",
+    "invalidFileTypeDesc": "Please upload an HTML bookmark file.",
+    "errorReadingFile": "Error reading file",
+    "errorReadingFileDesc": "File appears to be empty.",
+    "couldNotReadFile": "Could not read the selected file."
+  },
+  "results": {
+    "resultsTitle": "Check Results",
+    "status": "Status",
+    "title": "Title",
+    "url": "URL",
+    "errorMessage": "Error Message",
+    "ok": "OK"
+  },
+  "export": {
+    "exportOptions": "Export Options",
+    "exportDescription": "Choose your export format and which links to include.",
+    "linksToExport": "Links to Export",
+    "allLinks": "All Links",
+    "okLinks": "OK Links Only",
+    "errorLinks": "Error Links Only",
+    "exportFormat": "Export Format",
+    "exportBookmarks": "Export Bookmarks",
+    "checkAnotherFile": "Check Another File"
+  }
+}

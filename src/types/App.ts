@@ -3,7 +3,7 @@ export type Bookmark = {
   url: string;
 };
 
-export type BookmarkStatus = 'ok' | 'error';
+export type BookmarkStatus = "ok" | "error";
 
 export type BookmarkResult = Bookmark & {
   status: BookmarkStatus;
