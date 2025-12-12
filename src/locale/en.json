@@ -92,7 +92,13 @@
     "title": "Title",
     "url": "URL",
     "errorMessage": "Error Message",
-    "ok": "OK"
+    "ok": "OK",
+    "totalChecked": "Checked {{count}} bookmarks in total.",
+    "successCount": "OK",
+    "failedCount": "failed",
+    "all": "All",
+    "success": "Success",
+    "failed": "Failed"
   },
   "export": {
     "exportOptions": "Export Options",
@@ -103,6 +109,7 @@
     "errorLinks": "Error Links Only",
     "exportFormat": "Export Format",
     "exportBookmarks": "Export Bookmarks",
-    "checkAnotherFile": "Check Another File"
+    "checkAnotherFile": "Check Another File",
+    "baseFileName": "bookmarks"
   }
 }

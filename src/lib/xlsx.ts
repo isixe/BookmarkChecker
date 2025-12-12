@@ -1,4 +1,5 @@
 import * as XLSX from "xlsx";
+import i18n from "i18next";
 import type { BookmarkResult } from "../types/App";
 
 function downloadFile(blob: Blob, fileName: string) {
@@ -30,12 +31,16 @@ const translations = {
   },
 };
 
+function getTranslations() {
+  const lang = i18n.language.startsWith("zh") ? "zh" : "en";
+  return translations[lang];
+}
+
 export function exportToXLSX(
   results: BookmarkResult[],
   fileName: string,
-  lang: "zh" | "en",
 ) {
-  const t = translations[lang];
+  const t = getTranslations();
   const dataToExport = results.map((r, index) => ({
     [t.index]: index + 1,
     [t.title]: r.title,
@@ -69,9 +74,8 @@ export function exportToXLSX(
 export function exportToCsv(
   results: BookmarkResult[],
   fileName: string,
-  lang: "zh" | "en",
 ) {
-  const t = translations[lang];
+  const t = getTranslations();
   const dataToExport = results.map((r, index) => ({
     [t.index]: index + 1,
     [t.title]: r.title,

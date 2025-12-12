@@ -13,7 +13,6 @@ import { useTranslation } from "react-i18next";
 type BookmarkExportProps = {
 	results: BookmarkResult[];
 	onReset: () => void;
-	lang: "zh" | "en";
 };
 
 type ExportFilter = "all" | "ok" | "error";
@@ -31,7 +30,7 @@ const formatOptions: {
 	{ value: "txt", label: "URL List (TXT)", icon: FileText },
 ];
 
-export default function BookmarkExport({ results, onReset, lang }: BookmarkExportProps) {
+export default function BookmarkExport({ results, onReset }: BookmarkExportProps) {
 	const { t } = useTranslation();
 	const [filter, setFilter] = useState<ExportFilter>("all");
 	const [exportFormat, setExportFormat] = useState<ExportFormat>("xlsx");
@@ -44,11 +43,11 @@ export default function BookmarkExport({ results, onReset, lang }: BookmarkExpor
 			filteredResults = results.filter((r) => r.status === "error");
 		}
 
-		const baseFileName = lang === "zh" ? "书签" : "bookmarks";
+		const baseFileName = t("export.baseFileName");
 
 		switch (exportFormat) {
 			case "xlsx":
-				exportToXLSX(filteredResults, `${baseFileName}.xlsx`, lang);
+				exportToXLSX(filteredResults, `${baseFileName}.xlsx`);
 				break;
 			case "txt":
 				exportToTxt(filteredResults, `${baseFileName}_urls.txt`);
@@ -60,7 +59,7 @@ export default function BookmarkExport({ results, onReset, lang }: BookmarkExpor
 				exportToHtml(filteredResults, `${baseFileName}.html`);
 				break;
 			case "csv":
-				exportToCsv(filteredResults, `${baseFileName}.csv`, lang);
+				exportToCsv(filteredResults, `${baseFileName}.csv`);
 				break;
 		}
 	};

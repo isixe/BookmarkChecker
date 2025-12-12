@@ -58,7 +58,6 @@ export default function Home() {
 	const [results, setResults] = useState<BookmarkResult[]>([]);
 	const [isLoading, setIsLoading] = useState(false);
 	const [isDone, setIsDone] = useState(false);
-	const [lang] = useState<"zh" | "en">("en");
 
 	// Fetch and process bookmarks
 	const handleBookmarksParsed = useCallback(async (parsedBookmarks: Bookmark[]) => {
@@ -97,8 +96,8 @@ export default function Home() {
 	// Render results section when done
 	const renderResults = () => (
 		<div className="w-full max-w-4xl space-y-4 px-4 mb-8 mt-4">
-			<BookmarkExport results={results} onReset={resetState} lang={lang} />
-			<BookmarkResultsTable results={results} lang={lang} />
+			<BookmarkExport results={results} onReset={resetState} />
+			<BookmarkResultsTable results={results} />
 		</div>
 	);
 
