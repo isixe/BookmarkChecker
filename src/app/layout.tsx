@@ -15,6 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 			default: "Bookmark Link Checker - Automatically Scan for Broken Links",
 			template: `%s | Bookmark Link Checker`,
 		},
+		keywords: "bookmark scan, bookmark link checker, link checker, bookmark tool",
 		description:
 			"Free online tool to check for broken, dead, or redirected links in your browser bookmarks. Upload your HTML file and get a detailed report in seconds.",
 		alternates: {
