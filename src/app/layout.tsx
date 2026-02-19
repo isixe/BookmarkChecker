@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { ReactNode } from "react";
+import Script from "next/script";
 
 export async function generateMetadata(): Promise<Metadata> {
 	const headersList = await headers();
@@ -50,11 +51,13 @@ export default function RootLayout({
 }: Readonly<{
 	children: ReactNode;
 }>) {
+	const analyticsScript = process.env.ANALYTICS_SCRIPT ?? "";
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<head>
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
+				{analyticsScript && <Script src={analyticsScript} id="analytics" data-website-id="bookmark-checker" defer />}
 			</head>
 			<body className="font-body antialiased">{children}</body>
 		</html>
