@@ -53,7 +53,7 @@ export default async function RootLayout({
 }: Readonly<{
 	children: ReactNode;
 }>) {
-	const analyticsScript = process.env.ANALYTICS_SCRIPT ?? "";
+	const analyticsScript = process.env.ANALYTICS_SCRIPT || "";
 	const headersList = await headers();
 	const protocol = headersList.get("x-forwarded-proto") || "http";
 	const host = headersList.get("host") || "localhost:3000";
@@ -64,7 +64,9 @@ export default async function RootLayout({
 			<head>
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
-				{analyticsScript && <Script src={analyticsScript} id="analytics" data-website-id="bookmark-checker" defer />}
+				{analyticsScript ? (
+					<Script src={analyticsScript} id="analytics" data-website-id="bookmark-checker" defer />
+				) : null}
 			</head>
 			<body className="font-body antialiased">
 				<AppProvider baseUrl={baseUrl}>{children}</AppProvider>
