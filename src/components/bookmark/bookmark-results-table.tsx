@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -8,6 +9,7 @@ import type { BookmarkResult } from "@/types/App";
 import { ExternalLink, CheckCircle2, XCircle, Filter } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
+import { useAppContext } from "@/components/providers/app-provider";
 
 type BookmarkResultsTableProps = {
 	results: BookmarkResult[];
@@ -16,8 +18,9 @@ type BookmarkResultsTableProps = {
 type FilterType = "all" | "ok" | "error";
 
 export default function BookmarkResultsTable({ results }: BookmarkResultsTableProps) {
-	const { t } = useTranslation(); // Moved useTranslation to the top level
+	const { t } = useTranslation();
 	const [filter, setFilter] = useState<FilterType>("all");
+	const { baseUrl } = useAppContext();
 
 	if (!results || results.length === 0) {
 		return null;
@@ -83,6 +86,7 @@ export default function BookmarkResultsTable({ results }: BookmarkResultsTablePr
 								<TableHead className="w-[200px] min-w-[200px]">{t("results.title")}</TableHead>
 								<TableHead className="w-[300px] min-w-[300px]">{t("results.url")}</TableHead>
 								<TableHead className="w-[250px] min-w-[250px]">{t("results.errorMessage")}</TableHead>
+								<TableHead className="w-[80px] min-w-[80px]"></TableHead>
 							</TableRow>
 						</TableHeader>
 						<TableBody>
@@ -114,6 +118,20 @@ export default function BookmarkResultsTable({ results }: BookmarkResultsTablePr
 										) : (
 											<Badge variant="secondary">{t("results.ok")}</Badge>
 										)}
+									</TableCell>
+									<TableCell className="w-[80px] min-w-[80px] py-3">
+										<Image
+											onClick={() => {
+												const linkCheckerUrl = `https://link-checker.itea.dev?url=${result.url}&utm_source=${baseUrl}`;
+												window.open(linkCheckerUrl, "_blank");
+											}}
+											src="https://link-checker.itea.dev/favicon.ico"
+											alt="Check link"
+											width={16}
+											height={16}
+											className="h-5 w-5 border-rounded cursor-pointer"
+											unoptimized
+										/>
 									</TableCell>
 								</TableRow>
 							))}

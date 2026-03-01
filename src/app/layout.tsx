@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { ReactNode } from "react";
 import Script from "next/script";
+import { AppProvider } from "@/components/providers/app-provider";
 
 export async function generateMetadata(): Promise<Metadata> {
 	const headersList = await headers();
@@ -47,12 +48,17 @@ export async function generateMetadata(): Promise<Metadata> {
 	};
 }
 
-export default function RootLayout({
+export default async function RootLayout({
 	children,
 }: Readonly<{
 	children: ReactNode;
 }>) {
 	const analyticsScript = process.env.ANALYTICS_SCRIPT ?? "";
+	const headersList = await headers();
+	const protocol = headersList.get("x-forwarded-proto") || "http";
+	const host = headersList.get("host") || "localhost:3000";
+	const baseUrl = `${protocol}://${host}`;
+
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<head>
@@ -60,7 +66,9 @@ export default function RootLayout({
 				<link rel="icon" href="/favicon.ico" />
 				{analyticsScript && <Script src={analyticsScript} id="analytics" data-website-id="bookmark-checker" defer />}
 			</head>
-			<body className="font-body antialiased">{children}</body>
+			<body className="font-body antialiased">
+				<AppProvider baseUrl={baseUrl}>{children}</AppProvider>
+			</body>
 		</html>
 	);
 }
