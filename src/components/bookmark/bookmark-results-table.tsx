@@ -120,18 +120,33 @@ export default function BookmarkResultsTable({ results }: BookmarkResultsTablePr
 										)}
 									</TableCell>
 									<TableCell className="w-[80px] min-w-[80px] py-3">
-										<Image
-											onClick={() => {
-												const linkCheckerUrl = `https://link-checker.itea.dev?url=${result.url}&utm_source=${baseUrl}`;
-												window.open(linkCheckerUrl, "_blank");
-											}}
-											src="https://link-checker.itea.dev/favicon.ico"
-											alt="Check link"
-											width={16}
-											height={16}
-											className="h-5 w-5 border-rounded cursor-pointer"
-											unoptimized
-										/>
+										<div className="flex items-center gap-2">
+											<Image
+												onClick={() => {
+													const linkCheckerUrl = `https://link-checker.itea.dev?url=${result.url}&utm_source=${baseUrl}`;
+													window.open(linkCheckerUrl, "_blank");
+												}}
+												src="https://link-checker.itea.dev/favicon.ico"
+												alt="Check link"
+												width={16}
+												height={16}
+												className="h-5 w-5 border-rounded cursor-pointer"
+												unoptimized
+											/>
+
+											<Image
+												onClick={() => {
+													const linkCheckerUrl = `https://dqmainer.itea.dev/?url=${result.url}&utm_source=${baseUrl}`;
+													window.open(linkCheckerUrl, "_blank");
+												}}
+												src="https://dqmainer.itea.dev/favicon.ico"
+												alt="Check domain"
+												width={16}
+												height={16}
+												className="h-5 w-5 border-rounded cursor-pointer"
+												unoptimized
+											/>
+										</div>
 									</TableCell>
 								</TableRow>
 							))}
