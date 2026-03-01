@@ -95,7 +95,7 @@ export default function Home() {
 
 	// Render results section when done
 	const renderResults = () => (
-		<div className="w-full max-w-4xl space-y-4 px-4 mb-8 mt-4">
+		<div className="w-full max-w-5xl space-y-4 px-4 mb-8 mt-4">
 			<BookmarkExport results={results} onReset={resetState} />
 			<BookmarkResultsTable results={results} />
 		</div>
@@ -121,7 +121,7 @@ export default function Home() {
 	// Render how-it-works steps
 	const renderSteps = () => (
 		<section id="how-it-works" className="w-full py-6 sm:py-8">
-			<div className="container mx-auto max-w-4xl px-4 space-y-8">
+			<div className="container mx-auto max-w-5xl px-4 space-y-8">
 				<div className="text-center space-y-2">
 					<h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{t("howItWorksTitle")}</h2>
 				</div>
@@ -137,7 +137,7 @@ export default function Home() {
 	// Main upload section
 	const renderUploader = () => (
 		<section className="w-full py-6 sm:py-8">
-			<div className="container mx-auto max-w-4xl px-4 space-y-4 text-center">
+			<div className="container mx-auto max-w-5xl px-4 space-y-4 text-center">
 				<h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl">{t("title")}</h1>
 				<p className="mx-auto max-w-2xl text-lg text-muted-foreground">{t("description")}</p>
 				<div className="pt-4">

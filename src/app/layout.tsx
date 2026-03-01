@@ -68,7 +68,7 @@ export default async function RootLayout({
 					<Script src={analyticsScript} id="analytics" data-website-id="bookmark-checker" defer />
 				) : null}
 			</head>
-			<body className="font-body antialiased">
+			<body>
 				<AppProvider baseUrl={baseUrl}>{children}</AppProvider>
 			</body>
 		</html>
