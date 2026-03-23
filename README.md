@@ -25,7 +25,7 @@ Upload your bookmark file, automatically check all links for validity, and gener
 
 ## Tech Stack
 
-- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+- **Framework**: [Next.js 16](https://nextjs.org/)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Component Library**: [Shadcn-ui](https://shadcn-ui.com/)
 - **Icon**: [Lucide Icons](https://lucide.dev/)
