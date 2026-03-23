@@ -18,7 +18,6 @@ Upload your bookmark file, automatically check all links for validity, and gener
 
 - **Comprehensive Link Checking** - Automatically detect broken, timeout, or redirected links
 - **Batch Upload Processing** - Support standard browser-exported HTML bookmark files
-- **Secure & Private** - All processing is done securely on your device and our servers, we never store your bookmark data
 - **Multiple Export Options** - Export results to XLSX, TXT, CSV, JSON, HTML, and more
 - **Fast Concurrent Checking** - Optimized concurrent checking technology for rapid detection
 - **Detailed Status Reports** - Provide detailed reports with HTTP status codes and error messages
