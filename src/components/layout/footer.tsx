@@ -37,11 +37,7 @@ export default function Footer() {
 						<ul className="space-y-2">
 							{(t("footer.socials.links", { returnObjects: true }) as any[]).map((link) => (
 								<li key={link.name}>
-									<a
-										href={link.href}
-										target="_blank"
-										rel="noreferrer"
-										className="text-sm text-muted-foreground hover:text-foreground">
+									<a href={link.href} target="_blank" className="text-sm text-muted-foreground hover:text-foreground">
 										{link.name}
 									</a>
 								</li>
