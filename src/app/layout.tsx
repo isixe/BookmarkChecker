@@ -67,6 +67,11 @@ export default async function RootLayout({
 				{analyticsScript ? (
 					<Script src={analyticsScript} id="analytics" data-website-id="bookmark-checker" defer />
 				) : null}
+
+				<script
+					async
+					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1891811866184778"
+					crossOrigin="anonymous"></script>
 			</head>
 			<body>
 				<AppProvider baseUrl={baseUrl}>{children}</AppProvider>
