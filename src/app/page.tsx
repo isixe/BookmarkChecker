@@ -150,7 +150,7 @@ export default function Home() {
 				</div>
 
 				<ins
-					class="adsbygoogle"
+					className="adsbygoogle block"
 					data-ad-client="ca-pub-1891811866184778"
 					data-ad-slot="8091926161"
 					data-ad-format="auto"
