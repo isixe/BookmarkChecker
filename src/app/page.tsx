@@ -13,6 +13,7 @@ import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
 import { useTranslation } from "react-i18next";
 import { Link as LinkIcon, FileCheck2, ShieldCheck, Download, Zap, GaugeCircle, type LucideIcon } from "lucide-react";
+import Adsense from "@/components/service/adsense";
 
 // ============================================================================
 // Types & Constants
@@ -149,13 +150,7 @@ export default function Home() {
 					/>
 				</div>
 
-				<ins
-					className="adsbygoogle block"
-					data-ad-client="ca-pub-1891811866184778"
-					data-ad-slot="8091926161"
-					data-ad-format="auto"
-					data-full-width-responsive="true"></ins>
-				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<Adsense />
 			</div>
 		</section>
 	);
